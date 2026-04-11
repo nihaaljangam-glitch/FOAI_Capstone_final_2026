@@ -21,7 +21,7 @@ export default function Home() {
           </p>
           <div className="pt-8">
             <a 
-              href="http://localhost:5173/dashboard" 
+              href="https://test-foai-dashboard.vercel.app/dashboard" 
               className="inline-block px-8 py-3 bg-text text-bg rounded-full font-medium hover:scale-105 transition-transform"
             >
               EXPLORE CASE STUDIES

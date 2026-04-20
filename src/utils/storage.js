@@ -1,3 +1,8 @@
+/**
+ * API Keys and data storage utility
+ * Manages local storage for API keys and user session data
+ */
+
 import { DEFAULT_SELECTED_MODELS } from '../data/models';
 
 const STORAGE_KEY = 'ai_truthlens_v1';

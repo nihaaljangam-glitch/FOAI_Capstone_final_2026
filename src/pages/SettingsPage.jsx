@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import { Save, Key, LayoutGrid, ShieldAlert, Palette, ChevronRight, Check } from 'lucide-react';
+import { Save, Key, LayoutGrid, ShieldAlert, Palette, ChevronRight, Check, ShieldCheck } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { AVAILABLE_MODELS } from '../data/models';
 import clsx from 'clsx';
 
 export default function SettingsPage() {
   const { settings, updateSettings } = useApp();
-  const [apiKey, setApiKey] = useState(settings.openrouterApiKey || '');
-  const [hfKey, setHfKey] = useState(settings.huggingfaceApiKey || '');
-  const [googleKey, setGoogleKey] = useState(settings.googleApiKey || '');
+
   const [defaultModels, setDefaultModels] = useState(settings.defaultModels);
   const [isSaved, setIsSaved] = useState(false);
 
@@ -21,9 +19,6 @@ export default function SettingsPage() {
   const handleSave = () => {
     updateSettings({
       ...settings,
-      openrouterApiKey: apiKey,
-      huggingfaceApiKey: hfKey,
-      googleApiKey: googleKey,
       defaultModels: defaultModels,
     });
     setIsSaved(true);
@@ -38,48 +33,44 @@ export default function SettingsPage() {
       </div>
 
       <div className="space-y-6">
-        {/* API Section */}
+        {/* API Section — Pre-configured */}
         <section className="bg-aetheric-panel border border-aetheric-border rounded-xl p-6">
           <div className="flex items-center gap-3 mb-6">
-            <Key className="text-aetheric-pink" size={18} />
+            <ShieldCheck className="text-emerald-400" size={18} />
             <h2 className="text-lg font-bold text-white uppercase tracking-wider">API Credentials</h2>
+            <span className="ml-auto px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Pre-Configured</span>
           </div>
           
-          <div className="space-y-6">
-            <div>
-              <label className="block text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] mb-2">OpenRouter API Key</label>
-              <input 
-                type="password"
-                value={apiKey}
-                onChange={(e) => setApiKey(e.target.value)}
-                placeholder="sk-or-v1-..."
-                className="w-full bg-[#0a0a0a] border border-gray-800 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-aetheric-pink transition font-mono"
-              />
-              <p className="mt-2 text-[10px] text-gray-500 italic">Central gateway for high-capacity models at <a href="https://openrouter.ai/keys" target="_blank" rel="noreferrer" className="text-aetheric-pink hover:underline uppercase">openrouter.ai</a></p>
+          <div className="space-y-4">
+            <div className="flex items-center gap-3 p-3 rounded-lg bg-[#0a0a0a] border border-gray-800">
+              <Key className="text-aetheric-pink flex-shrink-0" size={14} />
+              <div className="flex-1">
+                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">OpenRouter API Key</p>
+                <p className="text-sm text-gray-300 font-mono mt-0.5">sk-or-v1-••••••••••••e1</p>
+              </div>
+              <span className="text-[9px] font-bold text-emerald-400 uppercase tracking-widest">Active</span>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
-               <div>
-                  <label className="block text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] mb-2">Hugging Face Token</label>
-                  <input 
-                    type="password"
-                    value={hfKey}
-                    onChange={(e) => setHfKey(e.target.value)}
-                    placeholder="hf_..."
-                    className="w-full bg-[#0a0a0a] border border-gray-800 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-aetheric-pink transition font-mono"
-                  />
-               </div>
-               <div>
-                  <label className="block text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] mb-2">Google AI API Key</label>
-                  <input 
-                    type="password"
-                    value={googleKey}
-                    onChange={(e) => setGoogleKey(e.target.value)}
-                    placeholder="AIza..."
-                    className="w-full bg-[#0a0a0a] border border-gray-800 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-aetheric-pink transition font-mono"
-                  />
-               </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="flex items-center gap-3 p-3 rounded-lg bg-[#0a0a0a] border border-gray-800">
+                <Key className="text-aetheric-pink flex-shrink-0" size={14} />
+                <div className="flex-1">
+                  <p className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">Hugging Face Token</p>
+                  <p className="text-sm text-gray-300 font-mono mt-0.5">hf_••••••••••••wx</p>
+                </div>
+                <span className="text-[9px] font-bold text-emerald-400 uppercase tracking-widest">Active</span>
+              </div>
+              <div className="flex items-center gap-3 p-3 rounded-lg bg-[#0a0a0a] border border-gray-800">
+                <Key className="text-aetheric-pink flex-shrink-0" size={14} />
+                <div className="flex-1">
+                  <p className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">Google AI API Key</p>
+                  <p className="text-sm text-gray-300 font-mono mt-0.5">AIza••••••••••••jw</p>
+                </div>
+                <span className="text-[9px] font-bold text-emerald-400 uppercase tracking-widest">Active</span>
+              </div>
             </div>
+
+            <p className="text-[10px] text-gray-500 italic">All API keys are pre-configured. No setup required.</p>
           </div>
         </section>
 

@@ -40,22 +40,9 @@ export default function InputPlaygroundPage() {
     let answers = [];
 
     try {
-      if (!settings.openrouterApiKey) {
-        addNotification('info', 'No API key found. Entering simulation mode...');
-        // Simulate thinking
-        await new Promise(r => setTimeout(r, 2000));
-        answers = selectedModelIds.map(id => ({
-          modelId: id,
-          modelName: MODEL_MAP.get(id).name,
-          answer: `[SIMULATED RESPONSE for ${MODEL_MAP.get(id).name}] The silk road had a profound impact... [SIMULATION CONTINUED]`,
-          latencyMs: Math.floor(Math.random() * 2000) + 500,
-          tokens: 450
-        }));
-      } else {
-        answers = await queryAllModels(modelsToQuery, question, settings.openrouterApiKey, (ans) => {
-          // Progress update if we had a multi-stage UI, but let's wait for all here
-        });
-      }
+      answers = await queryAllModels(modelsToQuery, question, settings.openrouterApiKey, (ans) => {
+        // Progress update if we had a multi-stage UI, but let's wait for all here
+      });
 
       const newSession = {
         id: sessionId,

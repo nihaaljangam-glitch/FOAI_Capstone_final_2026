@@ -44,7 +44,7 @@ export const DEMO_SESSIONS = [
     selectedModels: [
       'openai/gpt-4o-mini',
       'anthropic/claude-3-haiku',
-      'google/gemini-flash-1.5',
+      'google/gemini-2.5-flash',
     ],
     answers: [
       {
@@ -62,8 +62,8 @@ export const DEMO_SESSIONS = [
         tokens: 88,
       },
       {
-        modelId: 'google/gemini-flash-1.5',
-        modelName: 'Gemini 1.5 Flash',
+        modelId: 'google/gemini-2.5-flash',
+        modelName: 'Gemini 2.5 Flash',
         answer: answer1_gemini,
         latencyMs: 724,
         tokens: 81,

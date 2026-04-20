@@ -7,7 +7,6 @@ import {
   CheckCircle,
   PlayCircle,
   FlaskConical,
-  Info,
 } from 'lucide-react';
 import clsx from 'clsx';
 import { AVAILABLE_MODELS, MODEL_MAP, DEFAULT_SELECTED_MODELS } from '../data/models';
@@ -40,12 +39,11 @@ export default function PlaygroundPage() {
   const [pendingTag, setPendingTag] = useState(null);
   const [sessionSaved, setSessionSaved] = useState(false);
   const [currentSessionId, setCurrentSessionId] = useState(null);
-  const [apiKey, setApiKey] = useState('');
+
   const [demoMode, setDemoMode] = useState(false);
 
   useEffect(() => {
     const settings = loadSettings();
-    setApiKey(settings.openrouterApiKey);
     if (settings.defaultModels?.length) {
       setSelectedModels(settings.defaultModels);
     }
@@ -58,10 +56,8 @@ export default function PlaygroundPage() {
 
   const handleSubmit = async () => {
     if (!question.trim() || selectedModels.length < 2 || isLoading) return;
-    if (!apiKey) {
-      alert('Please add your OpenRouter API key in Settings first.');
-      return;
-    }
+    const settings = loadSettings();
+    const apiKey = settings.openrouterApiKey;
 
     setIsLoading(true);
     setAnswers([]);
@@ -180,29 +176,7 @@ export default function PlaygroundPage() {
       <div className="flex-1 overflow-y-auto">
         <div className="max-w-7xl mx-auto px-6 py-5 space-y-5">
 
-          {/* No API key warning */}
-          {!apiKey && (
-            <div className="flex items-start gap-3 p-4 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800">
-              <Info size={16} className="text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
-              <div className="flex-1">
-                <p className="text-sm font-medium text-amber-800 dark:text-amber-300">
-                  No API key configured
-                </p>
-                <p className="text-xs text-amber-700 dark:text-amber-400 mt-0.5">
-                  Add your{' '}
-                  <a
-                    href="https://openrouter.ai/keys"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline hover:no-underline"
-                  >
-                    OpenRouter API key
-                  </a>{' '}
-                  in Settings to query real models. In the meantime, explore the demo sessions below.
-                </p>
-              </div>
-            </div>
-          )}
+
 
           {/* Question input */}
           <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-4 space-y-3">
@@ -252,10 +226,10 @@ export default function PlaygroundPage() {
 
               <button
                 onClick={handleSubmit}
-                disabled={isLoading || !question.trim() || selectedModels.length < 2 || !apiKey}
+                disabled={isLoading || !question.trim() || selectedModels.length < 2}
                 className={clsx(
                   'flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all',
-                  isLoading || !question.trim() || selectedModels.length < 2 || !apiKey
+                  isLoading || !question.trim() || selectedModels.length < 2
                     ? 'bg-gray-200 dark:bg-gray-700 text-gray-400 cursor-not-allowed'
                     : 'bg-indigo-600 hover:bg-indigo-700 text-white shadow-sm'
                 )}

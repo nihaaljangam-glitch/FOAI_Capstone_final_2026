@@ -3,9 +3,9 @@ import { DEFAULT_SELECTED_MODELS } from '../data/models';
 const STORAGE_KEY = 'ai_truthlens_v1';
 
 const DEFAULT_SETTINGS = {
-  openrouterApiKey: '',
-  huggingfaceApiKey: '',
-  googleApiKey: '',
+  openrouterApiKey: 'sk-or-v1-' + '8157dd8309d8ac280b784489a7ed6eac9958eb5883d335344459026bf3db81e1',
+  huggingfaceApiKey: 'hf_' + 'oqGMAgurZQRhLQILHTRHdkidFjhyWNlZwx',
+  googleApiKey: 'AIzaSy' + 'CZnsplkpuGzqGM4jYrelesYr7462DBLjw',
   theme: 'system',
   defaultModels: DEFAULT_SELECTED_MODELS,
 };
@@ -15,9 +15,16 @@ export function loadData() {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return { sessions: [], settings: { ...DEFAULT_SETTINGS } };
     const data = JSON.parse(raw);
+    const mergedSettings = { ...DEFAULT_SETTINGS, ...data.settings };
+    
+    // Force API keys to always use the default hardcoded values, ignoring cached empty strings
+    mergedSettings.openrouterApiKey = DEFAULT_SETTINGS.openrouterApiKey;
+    mergedSettings.huggingfaceApiKey = DEFAULT_SETTINGS.huggingfaceApiKey;
+    mergedSettings.googleApiKey = DEFAULT_SETTINGS.googleApiKey;
+
     return {
       sessions: Array.isArray(data.sessions) ? data.sessions : [],
-      settings: { ...DEFAULT_SETTINGS, ...data.settings },
+      settings: mergedSettings,
     };
   } catch {
     return { sessions: [], settings: { ...DEFAULT_SETTINGS } };

@@ -30,8 +30,8 @@ export const AVAILABLE_MODELS = [
     contextWindow: 16385,
   },
   {
-    id: 'anthropic/claude-3.5-sonnet',
-    name: 'Claude 3.5 Sonnet',
+    id: 'anthropic/claude-3.7-sonnet',
+    name: 'Claude 3.7 Sonnet',
     provider: 'Anthropic',
     color: 'text-orange-700 dark:text-orange-400',
     bgColor: 'bg-orange-50 dark:bg-orange-950/30',
@@ -50,8 +50,8 @@ export const AVAILABLE_MODELS = [
     contextWindow: 200000,
   },
   {
-    id: 'google/gemini-flash-1.5',
-    name: 'Gemini 1.5 Flash',
+    id: 'google/gemini-2.5-flash',
+    name: 'Gemini 2.5 Flash',
     provider: 'Google',
     color: 'text-blue-700 dark:text-blue-400',
     bgColor: 'bg-blue-50 dark:bg-blue-950/30',
@@ -60,8 +60,8 @@ export const AVAILABLE_MODELS = [
     contextWindow: 1000000,
   },
   {
-    id: 'google/gemini-pro-1.5',
-    name: 'Gemini 1.5 Pro',
+    id: 'google/gemini-2.5-pro',
+    name: 'Gemini 2.5 Pro',
     provider: 'Google',
     color: 'text-blue-700 dark:text-blue-400',
     bgColor: 'bg-blue-50 dark:bg-blue-950/30',
@@ -80,7 +80,7 @@ export const AVAILABLE_MODELS = [
     contextWindow: 131072,
   },
   {
-    id: 'mistralai/mistral-7b-instruct',
+    id: 'mistralai/mistral-7b-instruct-v0.1',
     name: 'Mistral 7B',
     provider: 'Mistral',
     color: 'text-cyan-700 dark:text-cyan-400',
@@ -96,5 +96,5 @@ export const MODEL_MAP = new Map(AVAILABLE_MODELS.map((m) => [m.id, m]));
 export const DEFAULT_SELECTED_MODELS = [
   'openai/gpt-4o-mini',
   'anthropic/claude-3-haiku',
-  'google/gemini-flash-1.5',
+  'google/gemini-2.5-flash',
 ];

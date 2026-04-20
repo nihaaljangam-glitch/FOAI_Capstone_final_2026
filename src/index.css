@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --ls-bg: #0a0a0a;
+  --ls-text: #f5f5f5;
+  --ls-muted: #888888;
+  --ls-stroke: #1f1f1f;
+  --font-display: "Instrument Serif", serif;
+}
 @layer base {
   body {
     @apply bg-aetheric-bg text-aetheric-text;

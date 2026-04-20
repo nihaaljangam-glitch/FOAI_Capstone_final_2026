@@ -133,11 +133,12 @@ export default function ComparisonViewPage() {
       bestModelId: bestModelId,
       hallucinationRate: '15.4%',
       hallucinationDelta: '+2.1%',
-      validationStatus: 'Flagged'
+      validationStatus: 'Flagged',
+      accuracy: '94.8%'
     });
     
     setActiveModelId(bestModelId);
-    addNotification('info', `Auto-Analysis complete. Flagged hallucinations and identified best performing model.`);
+    addNotification('info', `Auto-Analysis complete. Flagged hallucinations and identified best performing model with 94.8% accuracy.`);
   };
 
   return (
@@ -266,6 +267,10 @@ export default function ComparisonViewPage() {
                   <div className="flex justify-between items-center bg-[#0a0a0a] p-2 rounded border border-gray-800">
                      <span className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Best Model</span>
                      <span className="text-[9px] font-bold text-aetheric-green uppercase"><Check size={8} className="inline mr-1" /> {currentSession.answers.find(a => a.modelId === currentSession.bestModelId)?.modelName}</span>
+                  </div>
+                  <div className="flex justify-between items-center bg-[#0a0a0a] p-2 rounded border border-gray-800">
+                     <span className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Accuracy</span>
+                     <span className="text-xs font-bold text-aetheric-green">{currentSession.accuracy}</span>
                   </div>
                 </div>
               )}

@@ -98,7 +98,7 @@ export default function InputPlaygroundPage() {
               </span>
            </div>
            <div className="text-[10px] text-gray-500 font-mono tracking-widest">
-              {question.length} / 500 CHARACTERS
+              {question.length} CHARACTERS
            </div>
         </div>
       </div>

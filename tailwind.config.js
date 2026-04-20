@@ -9,14 +9,14 @@ export default {
       },
       colors: {
         aetheric: {
-          pink: '#e04bf5',
-          bg: '#050505',
-          panel: '#101010',
-          border: '#1f1f1f',
-          text: '#f3f4f6',
-          muted: '#808080',
-          green: '#10b981',
-          red: '#ef4444'
+          pink: '#C44B2B',   // Rust (Replaces Pink)
+          bg: '#0D0C0B',     // Ink (Replaces pure black)
+          panel: '#151311',  // Lighter Ink (Replaces panel gray)
+          border: 'rgba(237,232,223,0.08)', // Surface with low opacity
+          text: '#EDE8DF',   // Cream (Replaces white)
+          muted: '#B8B2A8',  // Fog (Replaces light gray)
+          green: '#10b981',  // Keep for success
+          red: '#C44B2B'     // Rust for errors/destructive too
         }
       }
     },

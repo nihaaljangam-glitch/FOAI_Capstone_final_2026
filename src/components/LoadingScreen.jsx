@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const words = ["Design", "Create", "Inspire"];
+const words = ["Detect", "Reveal", "Trust"];
 
 export default function LoadingScreen({ onComplete }) {
   const [wordIndex, setWordIndex] = useState(0);

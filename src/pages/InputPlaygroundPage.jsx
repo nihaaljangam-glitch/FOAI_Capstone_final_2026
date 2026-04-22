@@ -4,6 +4,7 @@ import { useApp } from '../context/AppContext';
 import { AVAILABLE_MODELS, MODEL_MAP } from '../data/models';
 import { useNavigate } from 'react-router-dom';
 import { queryAllModels } from '../utils/api';
+import { DEMO_SESSIONS } from '../data/demoData';
 import clsx from 'clsx';
 
 export default function InputPlaygroundPage() {
@@ -40,9 +41,18 @@ export default function InputPlaygroundPage() {
     let answers = [];
 
     try {
-      answers = await queryAllModels(modelsToQuery, question, settings.openrouterApiKey, (ans) => {
-        // Progress update if we had a multi-stage UI, but let's wait for all here
-      });
+      if (settings.simulationMode) {
+        await new Promise(r => setTimeout(r, 1500)); // Simulate API round trips
+        answers = [...DEMO_SESSIONS[0].answers].map(ans => ({
+          ...ans,
+          // Assign synthetic answers to the selected models
+          modelId: modelsToQuery[Math.floor(Math.random() * modelsToQuery.length)].id,
+        })).slice(0, modelsToQuery.length); 
+      } else {
+        answers = await queryAllModels(modelsToQuery, question, settings.openrouterApiKey, (ans) => {
+          // Progress update if we had a multi-stage UI, but let's wait for all here
+        });
+      }
 
       const newSession = {
         id: sessionId,
@@ -196,7 +206,10 @@ export default function InputPlaygroundPage() {
                <button className="text-[10px] font-bold text-aetheric-pink tracking-widest uppercase hover:text-white transition">Browse Archive</button>
             </div>
             
-            <div className="bg-gradient-to-br from-[#151515] to-[#0a0a0a] border border-aetheric-border rounded-2xl p-8 flex-[0.7] relative overflow-hidden flex flex-col justify-end group">
+            <div 
+               onClick={() => navigate('/workbench')}
+               className="bg-gradient-to-br from-[#151515] to-[#0a0a0a] border border-aetheric-border rounded-2xl p-8 flex-[0.7] relative overflow-hidden flex flex-col justify-end group cursor-pointer hover:border-aetheric-pink/30 transition-colors"
+            >
                <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/50 to-transparent"></div>
                <h3 className="text-2xl font-bold text-white mb-2 relative z-10">Curator Mode</h3>
                <p className="text-[10px] text-gray-500 relative z-10">Enable editorial oversight for citation tracking.</p>

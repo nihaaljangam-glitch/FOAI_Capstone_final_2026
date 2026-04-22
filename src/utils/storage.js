@@ -8,6 +8,7 @@ const DEFAULT_SETTINGS = {
   googleApiKey: 'AIzaSy' + 'CZnsplkpuGzqGM4jYrelesYr7462DBLjw',
   theme: 'system',
   defaultModels: DEFAULT_SELECTED_MODELS,
+  simulationMode: false,
 };
 
 export function loadData() {

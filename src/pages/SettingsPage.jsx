@@ -139,13 +139,21 @@ export default function SettingsPage() {
       {/* Simulation Toggle */}
       <div className="mt-12 p-6 border border-dashed border-gray-800 rounded-xl">
         <div className="flex items-center gap-4">
-          <ShieldAlert className="text-amber-500" size={24} />
+          <ShieldAlert className={clsx("transition-colors", settings.simulationMode ? "text-aetheric-green" : "text-amber-500")} size={24} />
           <div className="flex-1">
              <h4 className="text-sm font-bold text-white uppercase tracking-widest">Developer Simulation Mode</h4>
              <p className="text-xs text-gray-500">If active, TruthLens will use high-fidelity synthetic data instead of querying live models via API.</p>
           </div>
-          <button className="px-4 py-2 rounded-lg bg-[#222] border border-gray-700 text-[10px] font-bold text-amber-500 uppercase tracking-widest hover:bg-amber-500/10 transition">
-             Enable Simulation
+          <button 
+             onClick={() => updateSettings({ ...settings, simulationMode: !settings.simulationMode })}
+             className={clsx(
+               "px-4 py-2 rounded-lg border text-[10px] font-bold uppercase tracking-widest transition",
+               settings.simulationMode 
+                 ? "bg-aetheric-green/10 border-aetheric-green/50 text-aetheric-green hover:bg-aetheric-green/20" 
+                 : "bg-[#222] border-gray-700 text-amber-500 hover:bg-amber-500/10"
+             )}
+          >
+             {settings.simulationMode ? "Simulation Active" : "Enable Simulation"}
           </button>
         </div>
       </div>

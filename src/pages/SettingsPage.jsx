@@ -142,7 +142,7 @@ export default function SettingsPage() {
           <ShieldAlert className={clsx("transition-colors", settings.simulationMode ? "text-aetheric-green" : "text-amber-500")} size={24} />
           <div className="flex-1">
              <h4 className="text-sm font-bold text-white uppercase tracking-widest">Developer Simulation Mode</h4>
-             <p className="text-xs text-gray-500">If active, TruthLens will use high-fidelity synthetic data instead of querying live models via API.</p>
+             <p className="text-xs text-gray-500">If active, Aletheia Lens will use high-fidelity synthetic data instead of querying live models via API.</p>
           </div>
           <button 
              onClick={() => updateSettings({ ...settings, simulationMode: !settings.simulationMode })}

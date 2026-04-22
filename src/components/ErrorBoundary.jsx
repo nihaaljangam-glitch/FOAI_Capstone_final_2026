@@ -12,11 +12,11 @@ class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    console.error('AI TruthLens Error Boundary caught:', error, errorInfo);
+    console.error('Aletheia Lens Error Boundary caught:', error, errorInfo);
   }
 
   handleReset = () => {
-    localStorage.removeItem('ai_truthlens_v1');
+    localStorage.removeItem('aletheia_lens_v1');
     window.location.href = '/';
   };
 

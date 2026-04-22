@@ -164,7 +164,7 @@ export default function HomePage() {
       </div>
 
       <nav>
-        <div className="nav-logo">TruthLens</div>
+        <div className="nav-logo">Aletheia Lens</div>
         <div className="nav-links">
           <a href="#about" className="magnetic">About</a>
           <a href="#features" className="magnetic">Features</a>
@@ -189,8 +189,8 @@ export default function HomePage() {
             <span className="eyebrow-line"></span>
             <span className="eyebrow-text">AI-Powered Narrative Intelligence</span>
           </div>
-          <h1 className="hero-title glitch" data-text="TruthLens AI">
-            <span className="line">Truth</span>
+          <h1 className="hero-title glitch" data-text="Aletheia Lens AI">
+            <span className="line">Aletheia</span>
             <span className="line">Lens</span>
             <span className="line">AI</span>
           </h1>
@@ -227,9 +227,9 @@ export default function HomePage() {
 
       <section id="about">
         <div className="reveal">
-          <div className="about-label">About TruthLens</div>
+          <div className="about-label">About Aletheia Lens</div>
           <h2 className="about-heading">Seeing through <em>noise</em> to find the signal</h2>
-          <p className="about-body">TruthLens is an advanced AI system engineered to detect misinformation, analyze narrative patterns, and synthesize authentic information across thousands of sources simultaneously.</p>
+          <p className="about-body">Aletheia Lens is an advanced AI system engineered to detect misinformation, analyze narrative patterns, and synthesize authentic information across thousands of sources simultaneously.</p>
           <p className="about-body">Built at the intersection of machine learning and investigative journalism, our system provides unprecedented accuracy in identifying manipulated content, fabricated narratives, and coordinated disinformation campaigns.</p>
         </div>
         <div className="about-visual reveal" style={{ transitionDelay: '.2s' }}>
@@ -403,13 +403,13 @@ export default function HomePage() {
           <h2 className="cta-h">Ready to see the<br/><em>authentic</em> story?</h2>
         </div>
         <div className="cta-right reveal" style={{ transitionDelay: '.2s' }}>
-          <p className="cta-sub">Explore live case studies and see TruthLens intelligence in action.</p>
+          <p className="cta-sub">Explore live case studies and see Aletheia Lens intelligence in action.</p>
           <button onClick={() => navigate('/playground')} className="btn-cta magnetic outline-none border-none">Open Dashboard →</button>
         </div>
       </section>
 
       <footer>
-        <div className="footer-logo">TruthLens</div>
+        <div className="footer-logo">Aletheia Lens</div>
         <div className="footer-meta">Est. 2024 · Tokyo & London<br/>All Rights Reserved</div>
         <div className="footer-links">
           <a href="#">Privacy</a>

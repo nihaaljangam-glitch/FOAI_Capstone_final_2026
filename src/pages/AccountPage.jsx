@@ -15,7 +15,7 @@ export default function AccountPage() {
         </div>
         <div>
           <h1 className="text-4xl font-bold tracking-tight mb-1 text-white">Researcher Alpha</h1>
-          <p className="text-gray-500 font-mono text-[10px] uppercase tracking-widest">Researcher ID: TL-AX-9941</p>
+          <p className="text-gray-500 font-mono text-[10px] uppercase tracking-widest">Researcher ID: AL-AX-9941</p>
           <div className="flex gap-4 mt-3">
              <div className="px-2 py-0.5 rounded border border-aetheric-pink/30 bg-aetheric-pink/5 text-[9px] font-bold text-aetheric-pink uppercase tracking-wider">Lead Analyst</div>
              <div className="px-2 py-0.5 rounded border border-gray-800 bg-gray-900/50 text-[9px] font-bold text-gray-500 uppercase tracking-wider">Pro Tier</div>
@@ -31,7 +31,7 @@ export default function AccountPage() {
               <Mail size={14} className="text-aetheric-pink" />
               <div className="flex-1">
                 <p className="text-[10px] font-bold text-gray-600 uppercase tracking-widest">Email Address</p>
-                <p className="text-sm text-gray-200">alpha@truthlens.ai</p>
+                <p className="text-sm text-gray-200">alpha@aletheialens.ai</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
@@ -72,7 +72,7 @@ export default function AccountPage() {
          </div>
          <h3 className="text-xl font-bold text-white mb-2 uppercase tracking-tight">Aetheric Insights Core</h3>
          <p className="text-sm text-gray-500 max-w-sm mb-8 leading-relaxed">
-           Your account is currently synced with the TruthLens Neural Network. 
+           Your account is currently synced with the Aletheia Lens Neural Network. 
            Validation history is cryptographically signed and stored locally in the environment.
          </p>
          

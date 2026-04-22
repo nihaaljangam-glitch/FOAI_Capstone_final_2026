@@ -1,6 +1,6 @@
 import { DEFAULT_SELECTED_MODELS } from '../data/models';
 
-const STORAGE_KEY = 'ai_truthlens_v1';
+const STORAGE_KEY = 'aletheia_lens_v1';
 
 const DEFAULT_SETTINGS = {
   openrouterApiKey: 'sk-or-v1-' + '8157dd8309d8ac280b784489a7ed6eac9958eb5883d335344459026bf3db81e1',

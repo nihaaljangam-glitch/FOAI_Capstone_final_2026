@@ -14,7 +14,7 @@ export default function Home() {
           className="space-y-6"
         >
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-display italic text-text">
-            TruthLens
+            Aletheia Lens
           </h1>
           <p className="max-w-2xl mx-auto text-muted text-lg md:text-xl tracking-wide uppercase leading-relaxed">
             Unveiling the authentic narrative through advanced analytical synthesis.

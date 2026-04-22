@@ -182,7 +182,7 @@ export default function InputPlaygroundPage() {
                The Power of <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-aetheric-pink to-purple-500">Engine Consensus.</span>
             </h2>
             <p className="text-sm text-gray-400 leading-relaxed mb-8">
-               TruthLens cross-references semantic weights across different neural architectures to isolate cognitive hallucinations before they impact your findings.
+               Aletheia Lens cross-references semantic weights across different neural architectures to isolate cognitive hallucinations before they impact your findings.
             </p>
             <div className="grid grid-cols-2 gap-4 relative z-10">
                <div className="bg-[#1a1a1a] p-4 rounded-xl border border-[#2a2a2a]">
@@ -223,7 +223,7 @@ export default function InputPlaygroundPage() {
       {/* Footer */}
       <footer className="w-full border-t border-aetheric-border pt-12 pb-6 px-12 flex justify-between items-start mt-auto">
          <div>
-            <h2 className="text-lg font-bold text-white mb-1 tracking-tight">TruthLens</h2>
+            <h2 className="text-lg font-bold text-white mb-1 tracking-tight">Aletheia Lens</h2>
             <p className="text-[9px] text-gray-600 uppercase tracking-widest font-mono">Autonomous Analytical Framework</p>
          </div>
          <div className="flex gap-16 text-xs">

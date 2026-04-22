@@ -43,7 +43,7 @@ export default function Layout() {
       {/* Top Bar */}
       <header className="h-14 flex-shrink-0 flex items-center px-6 border-b border-aetheric-border bg-aetheric-bg z-20 w-full relative justify-between">
         <div className="flex items-center gap-2">
-          <span className="text-xl font-bold tracking-tight">Truth<span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-aetheric-pink">Lens</span></span>
+          <span className="text-xl font-bold tracking-tight">Aletheia <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-aetheric-pink">Lens</span></span>
         </div>
 
         <nav className="flex space-x-8 absolute left-1/2 transform -translate-x-1/2 h-full items-center">

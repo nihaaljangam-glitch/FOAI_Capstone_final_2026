@@ -12,7 +12,7 @@ export async function queryModel(
         Authorization: `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
         'HTTP-Referer': window.location.origin,
-        'X-Title': 'AI TruthLens',
+        'X-Title': 'Aletheia Lens',
       },
       body: JSON.stringify({
         model: modelId,
